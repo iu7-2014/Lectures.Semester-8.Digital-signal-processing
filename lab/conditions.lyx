@@ -1,0 +1,268 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass g7-32_text
+\begin_preamble
+% Параграфы "Условие" "Решение"
+\newcommand{\conditions}{\paragraph{Условие}}
+\newcommand{\solution}{\paragraph{Решение}}
+\usepackage[thinc]{esdiff}
+\usepackage{commath}
+\usepackage{unicode-math}
+\end_preamble
+\use_default_options false
+\begin_modules
+local-minted
+irv-math
+\end_modules
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding default
+\font_roman CMU Serif
+\font_sans CMU Sans Serif
+\font_typewriter CMU Typewriter Text
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format pdf4
+\output_sync 1
+\output_sync_macro "\synctex=1"
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Предметный указатель
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 2cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Раздел
+Лабораторная работа №1
+\end_layout
+
+\begin_layout Standard
+Дискретное представление типовых сигналов.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+На примере типовых сигналов рассмотреть особенности дискретизации и последующего
+ восстановления сигналов.
+ 
+\begin_inset Newline newline
+\end_inset
+
+2 типовых сигнала: 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+Прямоугольный импульс.
+ Выбрав некоторый шаг дискретизации 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+, получить отсчет дискретизации, по формуле Котельникова восстановить сигнал.
+ В качестве результата должно получиться два графика: исходный сигнал (прямоугол
+ьный импульс) и его восстановленный аналог.
+ Графики в одной СК.
+ Параметр 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ можно изменять.
+ Объяснить эффекты, который при этом возникают.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/1.3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Прямоугольный импульс
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/1.2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Результат
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+Сигнал Гаусса.
+ 
+\begin_inset Formula $u(t)=Ae^{-\frac{t^{2}}{\sigma^{2}}}$
+\end_inset
+
+(А - амплитуда).
+ Параметр 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ определяет ширину кривой.
+ Для этого сигнала выполнить то же самое, что и для прямоугольного импульса.
+ 
+\begin_inset Formula $T=3\sigma$
+\end_inset
+
+ (ориентировочно).
+ Объяснить, почему в одном случае восстановление происходит лучше, чем в
+ другом.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/1.1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Сигнал Гаусса
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
