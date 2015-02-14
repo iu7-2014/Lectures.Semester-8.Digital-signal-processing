@@ -418,7 +418,7 @@ status open
 \end_layout
 
 \begin_layout Description
-x отстутсвует;
+x отсутствует;
 \end_layout
 
 \begin_layout Description
@@ -445,7 +445,7 @@ o насколько точно.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-u(t)=\sum_{k=-\infty}^{+\infty}u(k\Delta t)\mathrm{sinc}(2πF(t-\frac{K}{2F}))
+u(t)=\sum_{k=-\infty}^{+\infty}u(k\Delta t)\mathrm{sinc}(2πF(t-\frac{k}{2F}))
 \]
 
 \end_inset
@@ -688,7 +688,7 @@ status open
 \begin_inset Formula 
 \[
 w(t)=\begin{cases}
-\frac{1}{2}(1+cos(\pi f/F), & |f|\leq F\\
+\frac{1}{2}(1+\cos(\pi f/F), & |f|\leq F\\
 0, & |f|>F
 \end{cases}
 \]
@@ -906,10 +906,13 @@ D & = & \begin{cases}
 \end_layout
 
 \begin_layout Standard
-Значений Q будет меньше, если представитель берется в середине интервала,
- а количество разбиений зависит от того, в каком виде выбирается пороговое
- значения
-\begin_inset Formula $\Delta porog$
+Значений 
+\begin_inset Formula $Q$
+\end_inset
+
+ будет меньше, если представитель берется в середине интервала, а количество
+ разбиений зависит от того, в каком виде выбирается пороговое значения
+\begin_inset Formula $\Delta_{\text{пор}}$
 \end_inset
 
 .
@@ -958,7 +961,7 @@ M & =\frac{\ln q}{σ_{0}}
 Прежде, чем выполнять квантование, первый шаг делают по логарифмическому
  закону.
  На этапе восстановления происходит сначала восстановление этого сигнала,
- затем выполняется операция потенциирования.
+ затем выполняется операция потенцирования.
  Для звука выполняется квантование по закону, очень близкому к закону Вебера-Фех
 нера.
  Также используется логарифмирование.

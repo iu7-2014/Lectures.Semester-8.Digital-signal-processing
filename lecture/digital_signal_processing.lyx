@@ -10,6 +10,10 @@
 \usepackage[thinc]{esdiff}
 \usepackage{commath}
 \usepackage{unicode-math}
+
+\EqInChapter
+\TableInChapter
+\PicInChapter
 \end_preamble
 \use_default_options false
 \begin_modules

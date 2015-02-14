@@ -104,8 +104,6 @@ irv-math
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 На примере типовых сигналов рассмотреть особенности дискретизации и последующего
  восстановления сигналов.
  
@@ -116,8 +114,6 @@ irv-math
 \end_layout
 
 \begin_layout Enumerate
-
-\lang english
 Прямоугольный импульс.
  Выбрав некоторый шаг дискретизации 
 \begin_inset Formula $\Delta t$
@@ -203,8 +199,6 @@ status open
 \end_layout
 
 \begin_layout Enumerate
-
-\lang english
 Сигнал Гаусса.
  
 \begin_inset Formula $u(t)=Ae^{-\frac{t^{2}}{\sigma^{2}}}$
