@@ -3,7 +3,15 @@
 \begin_document
 \begin_header
 \textclass g7-32_text
-\use_default_options true
+\begin_preamble
+% Параграфы "Условие" "Решение"
+\newcommand{\conditions}{\paragraph{Условие}}
+\newcommand{\solution}{\paragraph{Решение}}
+\usepackage[thinc]{esdiff}
+\usepackage{commath}
+\usepackage{unicode-math}
+\end_preamble
+\use_default_options false
 \begin_modules
 local-minted
 irv-math
@@ -88,10 +96,6 @@ irv-math
 \begin_body
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
 filename "title.lyx"
@@ -101,14 +105,9 @@ filename "title.lyx"
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 

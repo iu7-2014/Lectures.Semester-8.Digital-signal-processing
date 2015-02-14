@@ -154,9 +154,29 @@
 \begin_layout Standard
 \align center
 
+\shape smallcaps
+конспект лекций
+\end_layout
+
+\begin_layout Standard
+\align center
+
 \series bold
 \size huge
 Цифровая обработка сигналов
+\end_layout
+
+\begin_layout Standard
+\align center
+лектор
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\shape smallcaps
+\size larger
+Терентьев Юрий Иванович
 \end_layout
 
 \begin_layout Standard
@@ -173,29 +193,15 @@
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
+<lyxtabular version="3" rows="2" columns="1">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <row>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Студент
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Инфлянскас Р.
-\begin_inset space \thinspace{}
-\end_inset
-
-В.
+Инфлянскас, Карабатырова, Мушиц
 \end_layout
 
 \end_inset
@@ -206,16 +212,7 @@
 \begin_inset Text
 
 \begin_layout Plain Layout
-Преподаватель
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Терентьев
+ИУ7-71
 \end_layout
 
 \end_inset

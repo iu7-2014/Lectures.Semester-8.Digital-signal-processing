@@ -177,19 +177,11 @@ u(x,y,z,t)
 
 \begin_deeper
 \begin_layout Enumerate
-Аналоговый 
-\lang english
-(непрерывная совокупность значений)
-\lang russian
-.
+Аналоговый (непрерывная совокупность значений).
 \end_layout
 
 \begin_layout Enumerate
-Дискретный
-\lang english
- (дискретный ряд значений)
-\lang russian
-.
+Дискретный (дискретный ряд значений).
 \end_layout
 
 \begin_layout Enumerate
@@ -206,8 +198,6 @@ u(x,y,z,t)
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Сигнал представляется в виде комплексного числа:
 \end_layout
 
@@ -291,37 +281,13 @@ u & =u_{0}e^{iφ}
 \end_inset
 
 (
-\family roman
 \series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\lang english
 PSNR)
-\family default
 \series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-\lang russian
  
 \begin_inset Formula $d=10\lg\frac{255^{2}N^{2}}{\sum_{i,j=0}^{N-1}\left|u_{i,j}-\tilde{u}_{i,j}\right|^{2}}$
 \end_inset
 
-
-\lang english
  Используется для анализа отличий изображений.
  Чем больше, тем лучше.
 \end_layout
@@ -331,8 +297,6 @@ PSNR)
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Сигнал можно представить в виде разложения по базовым функциям:
 \end_layout
 
@@ -348,16 +312,12 @@ u(t)=\sum_{k=0}^{N-1}u_{k}φ_{k}(t)
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Это позволяет сократить объем, необходимый для представления сигнала.
  Например, при разложении монохроматического сигнала в ряд Фурье, получается
  всего один коэффициент.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Виды базисных функций:
 \end_layout
 
@@ -386,15 +346,11 @@ u(t)=\sum_{k=0}^{N-1}u_{k}φ_{k}(t)
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Описывает ситуацию, когда в одной точке имеет место сразу несколько сигналов.
  
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Formula 
 \[
 u(t)=u_{1}+u_{2}
@@ -406,8 +362,6 @@ u(t)=u_{1}+u_{2}
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Геометрическая сумма.
  Складываются не интенсивности сигналов, а сами сигналы.
  Если сигналы некогерентные, то происходит сложение интенсивностей сигналов.
@@ -423,8 +377,6 @@ u(t)=u_{1}+u_{2}
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Также необходимо восстановить сигнал, то есть получить значения в промежуточных
  точках.
  Возникает вопрос, насколько полученный сигнал соответствует реальному непрерывн
@@ -478,8 +430,6 @@ o насколько точно.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Сигналы, спектр Фурье которых равен нулю за пределами некоторого интервала
  
 \begin_inset Formula $(-F,F)$
@@ -588,8 +538,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Если условие не выполнено (спектр сигнала является бесконечным).
  
 \end_layout
@@ -628,14 +576,10 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Возникает ряд эффектов, особенно по краям.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Если изображение неподвижно, возникает муар-эффект.
  
 \end_layout
@@ -674,8 +618,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Строб-эффект (колесо вращается не в ту сторону).
 \begin_inset Newline newline
 \end_inset
@@ -696,15 +638,11 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Чтобы избежать этих эффектов, необходимо выполнить условие наличия интервала.
  Для этого применяются оконные функции.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Оконная функция пропускает частоты только в определенном диапазоне.
  Она приводит сигнал к определенному виду, что позволяет избегать ошибок
  дискретизации.
@@ -746,8 +684,6 @@ status open
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Окно Хэннинга: 
 \begin_inset Formula 
 \[
@@ -763,8 +699,6 @@ w(t)=\begin{cases}
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Окно Кайзера: 
 \begin_inset Formula 
 \[
@@ -850,8 +784,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Процесс квантования выполняется в два этапа: разбиение всей области значений
  на некоторые интервалы (интервалы квантования), на каждом интервале выбирается
  так называемый представитель этого сигнала.
@@ -860,8 +792,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Ошибка, которая получается в результате замены сигнала на представителя:
  
 \begin_inset Formula $\varepsilon=|u-u^{*}|$
@@ -871,8 +801,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Formula $D(\varepsilon_{i})$
 \end_inset
 
@@ -880,8 +808,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Полная ошибка, которая получается в результате замены непрерывного представления
  квантованным: 
 \end_layout
@@ -931,8 +857,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Если интенсивность малая, то перепады яркости анализируются лучше, чем если
  интенсивность большая.
  Неравномерная шкала.
@@ -963,8 +887,6 @@ Q=\int_{u_{min}}^{u_{max}}p(u)D(\frac{\text{Δ}p}{w'(u)})du
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 На практике используется пороговый критерий для выбора функции.
  
 \end_layout
@@ -984,8 +906,6 @@ D & = & \begin{cases}
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Значений Q будет меньше, если представитель берется в середине интервала,
  а количество разбиений зависит от того, в каком виде выбирается пороговое
  значения
@@ -1013,8 +933,6 @@ D & = & \begin{cases}
 \begin_layout Enumerate
 Закон Вебера-Фехнера.
  
-\lang english
-
 \begin_inset Formula $\Delta_{\text{пор}}=\sigma_{0}u$
 \end_inset
 
@@ -1037,8 +955,6 @@ M & =\frac{\ln q}{σ_{0}}
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Прежде, чем выполнять квантование, первый шаг делают по логарифмическому
  закону.
  На этапе восстановления происходит сначала восстановление этого сигнала,
@@ -1046,9 +962,7 @@ M & =\frac{\ln q}{σ_{0}}
  Для звука выполняется квантование по закону, очень близкому к закону Вебера-Фех
 нера.
  Также используется логарифмирование.
- 
-\lang russian
-Для человеческого глаза:
+ Для человеческого глаза:
 \end_layout
 
 \begin_layout Standard
@@ -1068,8 +982,6 @@ M & \sim230
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 В ряде случаев удобнее оперировать не самим сигналом, а каким-то его преобразова
 нным аналогом.
  Одним из самых распространенных преобразований сигнала является получение
@@ -1100,8 +1012,6 @@ u(t)=\int_{-\infty}^{+\infty}u(t)e^{2πift}dt
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Основное свойство, которое нам потребуется для дальнейшей работы — так называема
 я теорема о свёртке.
 \end_layout
@@ -1111,8 +1021,6 @@ u(t)=\int_{-\infty}^{+\infty}u(t)e^{2πift}dt
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Если у нас есть две функции 
 \begin_inset Formula $u_{1}(t)$
 \end_inset
@@ -1122,8 +1030,6 @@ u(t)=\int_{-\infty}^{+\infty}u(t)e^{2πift}dt
 \end_inset
 
 , то сверткой этих функций называется:
-\lang russian
-
 \begin_inset Formula 
 \[
 w(t)=\int_{-\infty}^{+\infty}u_{1}(t')u_{2}(t-t')dt'
@@ -1135,15 +1041,11 @@ w(t)=\int_{-\infty}^{+\infty}u_{1}(t')u_{2}(t-t')dt'
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Теорема заключается в том, что Фурье-образ свёртки равен произведению Фурье-обра
 зов свёртываемых функций.
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Formula 
 \begin{align*}
 P(t) & =F(w(t))\\
@@ -1165,8 +1067,6 @@ V_{2}(t) & =F(u_{2}(t))
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Для простоты определения будем считать, что аргумент функции лежит в пределах
  
 \begin_inset Formula $0\leq z\leq1$
@@ -1176,8 +1076,6 @@ V_{2}(t) & =F(u_{2}(t))
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Функция имеет вид:
 \end_layout
 
@@ -1209,8 +1107,6 @@ w_{α}(z) & =(-1)\sum_{k=0}^{n}λ_{k}z_{k}
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Для функции Уолша также справедлива теорема о свертке.
 \end_layout
 
@@ -1219,8 +1115,6 @@ w_{α}(z) & =(-1)\sum_{k=0}^{n}λ_{k}z_{k}
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Тогда преобразование будет иметь следующий вид:
 \end_layout
 
@@ -1251,14 +1145,10 @@ C_{k}=\int_{0}^{1}x(t)w_{k}(t)dt
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Дискретизация имеет следующий вид:
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Formula 
 \[
 \{u(i)\},
@@ -1270,11 +1160,7 @@ C_{k}=\int_{0}^{1}x(t)w_{k}(t)dt
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 где 
-\lang russian
-
 \begin_inset Formula $i=0,1,\dots,N-1$
 \end_inset
 
@@ -1282,8 +1168,6 @@ C_{k}=\int_{0}^{1}x(t)w_{k}(t)dt
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Тогда спектр может быть получен следующим образом:
 \end_layout
 
@@ -1376,8 +1260,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Перед выполнением преобразования можно умножить 
 \begin_inset Formula $u(t)*(-1)^{t}$
 \end_inset
@@ -1424,8 +1306,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Спектр сдвигается на 
 \begin_inset Formula $k_{0}$
 \end_inset
@@ -1450,8 +1330,6 @@ u(n-n_{0}) & \to v(k)e^{-\frac{2\pi ikn_{0}}{N}}
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Процесс преобразования сигналов по тому или иному алгоритму принято называть
  
 \emph on
@@ -1486,12 +1364,8 @@ u(n-n_{0}) & \to v(k)e^{-\frac{2\pi ikn_{0}}{N}}
 \end_inset
 
 фильтр такой, который осуществляет преобразование со следующим условием:
- 
-\lang english
-действие фильтра на линейную комбинацию двух сигналов равно линейной комбинации
+ действие фильтра на линейную комбинацию двух сигналов равно линейной комбинации
  результатов работы.
-\lang russian
-
 \begin_inset Formula 
 \[
 \hat{T}(au_{1}(t)+bu_{2}(t))=a\hat{T}(u_{1}(t))+b\hat{T}(u_{2}(t))
@@ -1507,8 +1381,6 @@ u(n-n_{0}) & \to v(k)e^{-\frac{2\pi ikn_{0}}{N}}
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Если мы рассмотрим результат фильтрации сигнала, сдвинутого на постоянную
  величину, то мы получим сдвиг на постоянную величину.
 \end_layout
@@ -1593,8 +1465,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Фильтрующие свойства 
 \begin_inset Formula $δ$
 \end_inset
@@ -1603,8 +1473,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Formula 
 \[
 u(t)=\int_{-\infty}^{+\infty}u(t')\delta(t-t')dt'
@@ -1627,8 +1495,6 @@ u(t)=\int_{-\infty}^{+\infty}u(t')\delta(t-t')dt'
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 То есть, фактически, свойства этого линейного фильтра определяются тем,
  как фильтр действует на одиночный сигнал.
  Функция импульсного отклика.
@@ -1649,8 +1515,6 @@ u(t)=\int_{-\infty}^{+\infty}u(t')\delta(t-t')dt'
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Фурье-образ функции импульсного отклика получил название передаточной функции:
 \end_layout
 
@@ -1682,8 +1546,6 @@ h(f)=F(H(t))
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Теорема о свертке не будет выполняться для этой функции.
  Теорема о свертке выполняется только для циклических сверток:
 \end_layout
@@ -1700,8 +1562,6 @@ h(f)=F(H(t))
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Для выполнения свертки используется следующий механизм.
  Дополнение нулями до удвоенного значения:
 \end_layout
