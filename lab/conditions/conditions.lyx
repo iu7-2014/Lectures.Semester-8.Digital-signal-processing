@@ -97,9 +97,9 @@ irv-math
 
 \begin_layout Раздел
 Лабораторная работа №1
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Дискретное представление типовых сигналов.
 \end_layout
 
@@ -253,6 +253,58 @@ status open
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Раздел
+Лабораторная работа №2
+\begin_inset Newline newline
+\end_inset
+
+Алгоритмы ДПФ и БПФ
+\end_layout
+
+\begin_layout Подраздел
+Вход
+\end_layout
+
+\begin_layout Standard
+Исходный сигнал
+\end_layout
+
+\begin_layout Standard
+Сигнал Гаусса
+\end_layout
+
+\begin_layout Подраздел
+Результат
+\end_layout
+
+\begin_layout Enumerate
+При наличии эффекта 
+\begin_inset Quotes fld
+\end_inset
+
+близнецов
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Без наличия эффекта 
+\begin_inset Quotes fld
+\end_inset
+
+близнецов
+\begin_inset Quotes frd
+\end_inset
+
+: 
+\begin_inset Formula $(-1)^{t}$
 \end_inset
 
 
