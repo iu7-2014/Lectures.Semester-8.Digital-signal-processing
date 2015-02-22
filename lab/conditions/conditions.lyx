@@ -266,22 +266,18 @@ status open
 Алгоритмы ДПФ и БПФ
 \end_layout
 
-\begin_layout Подраздел
-Вход
+\begin_layout Enumerate
+Исходный сигнал: прямоугольный импульс и сигнал Гаусса.
 \end_layout
 
-\begin_layout Standard
-Исходный сигнал
+\begin_layout Enumerate
+Результат работы.
+ От каждого сигнала вычислить дискретное и быстрое преобразование Фурье
+ и отобразить их графически.
+ При этом рассматриваются две ситуации:
 \end_layout
 
-\begin_layout Standard
-Сигнал Гаусса
-\end_layout
-
-\begin_layout Подраздел
-Результат
-\end_layout
-
+\begin_deeper
 \begin_layout Enumerate
 При наличии эффекта 
 \begin_inset Quotes fld
@@ -310,5 +306,6 @@ status open
 
 \end_layout
 
+\end_deeper
 \end_body
 \end_document

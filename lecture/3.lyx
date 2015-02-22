@@ -1,0 +1,637 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass g7-32_text
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+ЛЕКЦИЯ №3.
+ 18.02.2015
+\end_layout
+
+\begin_layout Standard
+Большинство разработанных фильтров, как правило, созданы для единой частотной
+ области.
+ Для вычисления дискретных преобразований был разработан так называемый
+ быстрый алгоритм, который позволяет вычислять с меньшими временными затратами,
+ чем вычисления 
+\begin_inset Quotes eld
+\end_inset
+
+в лоб
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Подраздел
+Алгоритм быстрого преобразования Фурье (БПФ, FFT)
+\end_layout
+
+\begin_layout Standard
+Преобразование Фурье
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v(k)=\sum_{n=0}^{N-1}u(n)e^{\frac{-2\pi ikn}{N}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выполняется примерно за 
+\begin_inset Formula $\sim N^{2}$
+\end_inset
+
+.
+ Для изображений 
+\begin_inset Formula $\sim N^{4}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В 1965 году был получен алгоритм Кули-Тьюки, который существенно повысил
+ эффективность преобразований.
+\end_layout
+
+\begin_layout Subsubsection
+Идея составления таких алгоритмов
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $N$
+\end_inset
+
+ — четное.
+ Если мы представим 
+\begin_inset Formula $n=2m$
+\end_inset
+
+, то 
+\begin_inset Formula $m=0,...,\nicefrac{N}{2}$
+\end_inset
+
+.
+ После выполнения преобразования сумма разбивается на две части:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v(k)=\sum_{m=0}^{N_{1}-1}u(2m)e^{\frac{-2\pi km}{N_{1}}}+\sum_{m=0}^{N_{1}-1}u(2m+1)e^{\frac{-2\pi km}{N_{1}}}e^{\frac{-2\pi k}{N}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+при 
+\begin_inset Formula $N_{1}=\nicefrac{N}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Децимация по времени.
+ Если 
+\begin_inset Formula $0\leq k\leq N_{1}-1$
+\end_inset
+
+, то соотношение можно переписать в следующем виде:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+v(k) & = & S_{0}(k)+S_{1}(k)e^{\frac{-2\pi k}{N}}\\
+v(k+N_{1}) & = & S_{0}(k)-S_{1}(k)e^{\frac{-2\pi k}{N}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Эту формулу называют 
+\begin_inset Quotes eld
+\end_inset
+
+бабочка
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Связано с геометрической интерпретацией (рисунок 1).
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $N=2^{P}$
+\end_inset
+
+, то эту процедуру можно продолжать дальше.
+ В итоге в формуле 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+и 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+являются элементами сигнала, а не суммами.
+ 
+\end_layout
+
+\begin_layout Standard
+Эффективность алгоритма 
+\begin_inset Formula $\sim N\log_{2}N$
+\end_inset
+
+.
+ Все преобразования являются тождественными, поэтому ошибка не вносится.
+ Для двумерного преобразования Фурье 
+\begin_inset Formula $\sim N^{2}\log_{2}N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Когда 
+\begin_inset Formula $u(n)$
+\end_inset
+
+ - действительные числа, используется несколько групп алгоритмов
+\end_layout
+
+\begin_layout Subsubsection
+Совмещенные алгоритмы
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v(k)=V*(N-k)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть есть отсчеты некоторого сигнала 
+\begin_inset Formula $u$
+\end_inset
+
+.
+ Из этих отсчетов можно сделать единый эффективный или совмещенный сигнал.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{u(n)\}$
+\end_inset
+
+ и 
+\begin_inset Formula 
+\[
+\{w(n)\}\Rightarrow Q(n)=u(n)+iw(n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В данном случае это есть просто мнимая единица.
+ Если мы теперь вычислим преобразование Фурье от этого совмещенного сигнала
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\varkappa(k)=\text{БПФ}(Q(n))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v(k)=\text{БПФ}(u(n))=\frac{\varkappa(k)+\varkappa^{*}(N-k)}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\gamma(k)=\text{БПФ}(w(n))=i\frac{\varkappa(k)-\varkappa^{*}(N-k)}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вторая группа алгоритмов, которая используется при обработке изображений,
+ в частности, видеоряда с общей областью (перекрытием) у двух кадров.
+ При наличии общих областей можно делать упрощения.
+ Такого рода алгоритмы получили название 
+\begin_inset Quotes fld
+\end_inset
+
+рекуррентные алгоритмы
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Рекуррентные алгоритмы
+\end_layout
+
+\begin_layout Standard
+Сигнал 
+\begin_inset Formula $u(n)$
+\end_inset
+
+, спектр 
+\begin_inset Formula $v(k)$
+\end_inset
+
+, сигнал, сдвинутый на 
+\begin_inset Formula $p$
+\end_inset
+
+ относительно исходного.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+u(n) & \leftrightarrow & v(k)\\
+0\leq & n\leq & N-1\\
+u_{p}(n) & \leftrightarrow & V_{p}(k)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Спектр сдвинутого сигнала выражается относительно спектра исходного сигнала
+ следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{p}(k)=v(k)e^{\frac{-2\pi ipk}{N}}+\{\sum_{n=0}^{P-1}[u(n+N)-u(n)]e^{\frac{2\pi ikn}{N}}\}e^{\frac{-2\pi kp}{N}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Частный случай при 
+\begin_inset Formula $p=1$
+\end_inset
+
+, что часто бывает при обработке видеосигнала, - скользящий алгоритм.
+ Имеет следующий вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{1}(k)=\{v(k)+u(N)-u(0)\}e^{\frac{-2\pi ik}{N}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подраздел
+Особенности вычисления свёрток
+\end_layout
+
+\begin_layout Standard
+Рассмотрим еще один довод в пользу использования спектральных преобразований,
+ а именно так называемую последовательную свёртку.
+\end_layout
+
+\begin_layout Пункт
+Последовательная свёртка
+\end_layout
+
+\begin_layout Standard
+Общий вид может быть представлен таким образом: (рисунок 2) на входе сигнал,
+ первый фильтр, второй фильтр и т.
+ д.
+ На выходе получается некоторый преобразованный сигнал.
+\end_layout
+
+\begin_layout Standard
+В частотной области за счет свойства свёртки (Фурье образ свёртки равен
+ произведению свернутых функций) нет необходимости вычислять работу каждого
+ фильтра в отдельности.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w(n)=F^{-1}[\tilde{\Phi_{1}}(f)\tilde{\Phi_{2}}(f)...\tilde{\Phi_{e}}(f)V(f)]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F^{-1}$
+\end_inset
+
+ - обратное преобразование Фурье
+\end_layout
+
+\begin_layout Пункт
+Секционная свертка
+\end_layout
+
+\begin_layout Standard
+Когда функция импульсного отклика имеет гораздо меньше отсчетов, чем количество
+ отсчетов сигнала.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N_{c}\gg N_{u}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Нет необходимости приводить отсчеты к одному и тому же значению путем добавления
+ нулей.
+ Можно использовать секционную свертку.
+\end_layout
+
+\begin_layout Standard
+Есть исходный сигнал 
+\begin_inset Formula $u(n).$
+\end_inset
+
+Он разбивается на секции.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u_{l}(n)$
+\end_inset
+
+ - 
+\begin_inset Formula $l$
+\end_inset
+
+-ая секция.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u(n):\, u_{l}(n)=\begin{cases}
+u(n), & lN_{u}\leq n<(l+1)N_{u}\\
+0 & \text{в остальных случаях}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сигнал на выходе фильтра:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+w(n)=\sum_{l}(\sum_{n'=0}^{N_{c}-1}u_{l}(n')h(n-n'))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+u(n) & =\sum_{l}u_{l}(n)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подпункт
+Секционная свертка с перекрытием и без перекрытия.
+\end_layout
+
+\begin_layout Standard
+Количество отсчетов в результате свертки 
+\begin_inset Formula $w(n)$
+\end_inset
+
+ будет больше, чем количество отсчетов 
+\begin_inset Formula $N_{u}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Секционная свертка с перекрытием - свертка с суммированием перекрывающихся
+ значений.
+ 
+\end_layout
+
+\begin_layout Standard
+Формула свертки: 
+\begin_inset Formula 
+\[
+w(k)=\sum_{n=0}^{N-1}u(n)h(k-n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из соотношения свертки следует, что результат свертки двух функций, лежащих
+ в пределах 
+\begin_inset Formula $0\leq n\leq N-1$
+\end_inset
+
+, лежит в 
+\begin_inset Formula $0\leq k\leq2N-2$
+\end_inset
+
+.
+ Отсюда возникает перекрытие.
+ 
+\end_layout
+
+\begin_layout Standard
+Обычно перекрывающиеся части гораздо меньше, чем неперекрывающиеся.
+ Поэтому чаще используют алгоритм суммирования без перекрытия, когда перекрывающ
+иеся части просто обрезают.
+\end_layout
+
+\begin_layout Standard
+ЛАБОРАТОРНАЯ №2
+\end_layout
+
+\begin_layout Подраздел
+Виды линейных фильтров
+\end_layout
+
+\begin_layout Пункт
+Классификация
+\end_layout
+
+\begin_layout Standard
+Идея разработки фильтров возникла задолго до начала использования свёртки.
+ Для описания фильтров использовались дифференциальные уравнения.
+ Классификация строилась на дискретном представлении результатов дифференциальны
+х уравнений.
+ 
+\end_layout
+
+\begin_layout Standard
+Сигнал на выходе фильтра выражается через две суммы.
+ Первая сумма представляет только отсчеты исходного сигнала (отсчеты функций
+ импульсного ввода).
+ Вторая сумма вносит элемент рекурсии, поскольку это отсчеты выходного сигнала.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y(i)=\sum_{0}^{K}b_{k}x(i-k)-\sum_{l=1}^{L}a_{l}y(i-l)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В зависимости от наличия или отсутствия второго слагаемого принято рассматривать
+ фильтры двух видов:
+\end_layout
+
+\begin_layout Enumerate
+Нерекурсивные (КИХ-фильтры): все 
+\begin_inset Formula $a_{l}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Рекурсивные (БИХ-фильтры): хотя бы один 
+\begin_inset Formula $a_{l}\neq0$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
