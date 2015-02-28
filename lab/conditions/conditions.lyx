@@ -307,5 +307,172 @@ status open
 \end_layout
 
 \end_deeper
+\begin_layout Раздел
+Лабораторная работа №3
+\begin_inset Newline newline
+\end_inset
+
+Реализация частотного алгоритма свёртки
+\end_layout
+
+\begin_layout Standard
+Реализация частотного алгоритма вычисления свёртки.
+ 
+\end_layout
+
+\begin_layout Standard
+Нужно выполнить и графически отобразить три варианта свертки: прямоугольный
+ и прямоугольный, прямоугольный и Гаусс, Гаусс и Гаусс (рисунки).
+\end_layout
+
+\begin_layout Standard
+Прямоугольный и Гаусс - сглаживание прямоугольного импульса (фильтр низких
+ частот).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u(t)=\int_{-\infty}^{+\infty}N(t')H(t-t')dt'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/3.1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Раздел
+Лабораторная работа №4
+\begin_inset Newline newline
+\end_inset
+
+Изучение фильтров низких частот
+\end_layout
+
+\begin_layout Параграф
+Исходный сигнал
+\end_layout
+
+\begin_layout Standard
+Гаусса
+\end_layout
+
+\begin_layout Description
+Помехи
+\end_layout
+
+\begin_layout Itemize
+Аддитивные с равномерным законом распределения импульсная: 
+\begin_inset Formula $u(t)=u_{0}(t)+ξ(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+С гауссовым законом, аддитивная.
+\end_layout
+
+\begin_layout Параграф
+Фильтры
+\end_layout
+
+\begin_layout Enumerate
+БИХ-фильтр Батеруорта
+\end_layout
+
+\begin_layout Enumerate
+КИХ-фильтры Батеруорта и Гаусса
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/4.1.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pic/4.2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Раздел
+Лабораторная работа №4
+\begin_inset Newline newline
+\end_inset
+
+Изучение фильтров высоких частот
+\end_layout
+
+\begin_layout Standard
+Аналогично лабораторной работе №4.
+\end_layout
+
 \end_body
 \end_document
