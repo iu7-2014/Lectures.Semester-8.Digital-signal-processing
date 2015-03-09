@@ -1,0 +1,509 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass g7-32_text
+\begin_preamble
+% Параграфы "Условие" "Решение"
+\newcommand{\conditions}{\paragraph{Условие}}
+\newcommand{\solution}{\paragraph{Решение}}
+\usepackage[thinc]{esdiff}
+\usepackage{commath}
+\usepackage{unicode-math}
+\end_preamble
+\use_default_options false
+\begin_modules
+local-minted
+irv-math
+\end_modules
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding default
+\font_roman CMU Serif
+\font_sans CMU Sans Serif
+\font_typewriter CMU Typewriter Text
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format pdf4
+\output_sync 1
+\output_sync_macro "\synctex=1"
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Предметный указатель
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 2cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+ЛЕКЦИЯ №5.
+ 25.02.15
+\end_layout
+
+\begin_layout Подраздел
+Определение параметров случайных помех
+\end_layout
+
+\begin_layout Пункт
+Широкополосный шум
+\end_layout
+
+\begin_layout Standard
+Искажённый помехой сигнал: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=u_{0}+\xi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Корреляционная функция искаженного помехой сигнала может быть представлена
+ следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R(u)=R(u_{0})+R(\xi)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим поведение корреляционной функции, как функции от некоторого аргумента
+ 
+\begin_inset Formula $τ$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{u}(\tau)=R_{0}(\tau)+R_{\xi}(\tau)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если спектр увеличивается, то уменьшается временной интервал, то есть
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+FT\simeq L
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Пункт
+Оценка параметров периодических помех и других помех с узким спектром
+\end_layout
+
+\begin_layout Standard
+Спектр периодической помехи представляет собой достаточно узкий выброс в
+ частотной области (напоминает дельта-функцию).
+ 
+\end_layout
+
+\begin_layout Standard
+Предполагаем, что помеха и идеальный сигнал статистически независимы и аддитивны.
+ Рассматриваем не саму корреляционную функцию, а энергетический спектр —
+ Фурье-образ корреляционной функции сигнала.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{u}(f)=A_{0}(f)+A_{ξ}(f)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/4.8.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|A_{n}(f)\right|\geq\text{Δ}_{\text{пор}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Использование порогового критерия связано с ошибками двух видов.
+ Ошибки пропуска - было взято слишком большое значение и ошибку пропустили.
+ Ложная тревога - часть идеального сигнала была принята за ошибку.
+ 
+\end_layout
+
+\begin_layout Standard
+При частоте 
+\begin_inset Formula $f=f_{1}$
+\end_inset
+
+есть выброс.
+ Далее выполняем интерполяцию по тем соседним точкам, где выброса уже нет.
+ 
+\begin_inset Formula $\tilde{A_{u}}(f)$
+\end_inset
+
+ - интерполированная функция.
+ Тогда
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{\xi}(f)=A_{u}(f)-\tilde{A_{u}}(f)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Пункт
+Импульсная помеха
+\end_layout
+
+\begin_layout Standard
+Приблизительно тот же самый алгоритм, что и при помехе с узким спектром
+ (но во временной области).
+\end_layout
+
+\begin_layout Подраздел
+Синтез линейных фильтров
+\end_layout
+
+\begin_layout Пункт
+Адаптивный фильтр Винера
+\end_layout
+
+\begin_layout Standard
+Постановка задачи
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\vec{u} & =\{u_{k}\}\quad k=0,\dots,N-1\\
+\vec{a} & =\{a_{k}\}\text{ — идеальный сигнал}\\
+\hat{\vec{a}} & =\{\hat{a}_{k}\}\text{ — восстановленный сигнал.}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\overline{\mbox{ε}^{2}} & =\overline{\sum_{k=0}^{N-1}\left|\hat{a}_{k}-a_{k}\right|^{2}}\to\min\\
+\hat{a}_{k} & =\sum_{l=0}^{N-1}h_{k-l}u_{l}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{α_{k}\}$
+\end_inset
+
+ — спектр 
+\begin_inset Formula $\{α_{k}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{\hat{α}_{k}\}$
+\end_inset
+
+ — спектр 
+\begin_inset Formula $\{\hat{α}_{k}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Равенство Парсевара:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\overline{\mbox{ε}^{2}} & =\overline{\sum_{k=0}^{N-1}\left|\hat{α}_{k}-α_{k}\right|^{2}}\to\min\\
+\hat{α}_{k} & =v_{k}H_{k}\\
+\{v_{k}\} & \text{— спектр }\{u_{k}\}\\
+\{H_{k}\} & \text{— спектр }\{h_{k}\}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{k}=\frac{\overline{α_{k}v_{k}^{*}}}{\overline{\left|v_{k}\right|^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Мы должны синтезировать такой фильтр, чтобы он после применения к искаженному
+ сигналу дал нам восстановленный сигнал.
+\end_layout
+
+\begin_layout Standard
+Поскольку функция является свёрткой, спектры это просто произведение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\alpha}_{k}=V_{k}H_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{V_{k}\}$
+\end_inset
+
+ - спектр 
+\begin_inset Formula $\{u_{k}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{H_{k}\}$
+\end_inset
+
+ - спектр 
+\begin_inset Formula $\{h_{k}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подпункт
+Выражение для фильтра Виннера
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{k}=\frac{\overline{\alpha_{k}V_{k}^{*}}}{\overline{|V_{k}|^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подпункт
+Аддитивная статистически независимая помеха.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+u_{k} & =ξ_{k}+a_{k}\\
+v_{k} & =χ_{k}+α_{k}\\
+H_{k} & =\frac{\overline{\left|v_{k}\right|^{2}}-\overline{\left|χ\right|^{2}}}{\overline{\left|v_{k}\right|^{2}}}\\
+\left|v_{k}\right| & \sim\left|χ_{k}\right|\\
+\left|v_{k}\right| & \gg\left|χ_{k}\right|
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Частный случай — режекторный фильтр:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{k}=\begin{cases}
+1, & \text{если }\left|v_{k}\right|\gg\left|χ_{k}\right|\\
+0, & \text{если }\left|v_{k}\right|\sim\left|χ_{k}\right|
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Коррекция линейных помех, вносимых системой преобразование сигнала
+\end_layout
+
+\begin_layout Standard
+Спектр искаженного сигнала включает в себя аддитивную помеху 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{k}=\chi_{k}+\lambda)_{k}\alpha_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{\lambda_{k}\}$
+\end_inset
+
+ - спектр искажающей функции.
+\end_layout
+
+\begin_layout Standard
+Выражение для фильтра Винера получается следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{k}=\begin{cases}
+\frac{\overline{|V_{k}|^{2}}-\overline{|\chi_{k}|^{2}}}{\overline{|V_{k}|^{2}}}, & \text{если }\lambda_{k}\neq0\\
+0 & \text{иначе}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

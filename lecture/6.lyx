@@ -1,0 +1,289 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass g7-32_text
+\begin_preamble
+% Параграфы "Условие" "Решение"
+\newcommand{\conditions}{\paragraph{Условие}}
+\newcommand{\solution}{\paragraph{Решение}}
+\usepackage[thinc]{esdiff}
+\usepackage{commath}
+\usepackage{unicode-math}
+\end_preamble
+\use_default_options false
+\begin_modules
+local-minted
+irv-math
+\end_modules
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding default
+\font_roman CMU Serif
+\font_sans CMU Sans Serif
+\font_typewriter CMU Typewriter Text
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format pdf4
+\output_sync 1
+\output_sync_macro "\synctex=1"
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Предметный указатель
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 2cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Пункт
+Итеративный алгоритм фильтрации импульсных помех
+\end_layout
+
+\begin_layout Пункт
+Рекурсивный алгоритм
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{a}_{k}=\begin{cases}
+a_{k}, & \text{{\text{если}}}\left|d\right|<δ_{1}\\
+\bar{a}_{k}+δ_{2}\mathrm{sign}(d), & \left|d\right|\geqδ_{1}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d=a_{k}-\bar{a}_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подраздел
+Синтез линейных фильтров методом регуляризации Тихонова
+\end_layout
+
+\begin_layout Description
+
+\series medium
+\begin_inset Formula $u_{1}(x)$
+\end_inset
+
+ 
+\series default
+идеальный сигнал
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $H(x)$
+\end_inset
+
+ функция исходного сигнала
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $u_{2}(x)$
+\end_inset
+
+ исходный сигнал
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+u_{2}(x)= & \int_{-\infty}^{+\infty}u_{1}(x-x')H(x')dx'\\
+\tilde{u}_{2}(f)= & \tilde{u}_{1}(f)\tilde{H}(f)\\
+\tilde{H(f)=} & \frac{\tilde{u}_{2}(f)}{\tilde{u}_{1}(f)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{2}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сглаживающий функционал
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+M_{α}(H) & =\left\Vert \hat{A}H-u_{2δ}\right\Vert +α\left\Vert H\right\Vert ^{2}\to min\\
+\left\Vert \hat{A}H-u_{2δ}\right\Vert  & =\int_{-\infty}^{+\infty}\{(\int_{-\infty}^{+\infty}u_{1}(x-x')H(x')dx'-u_{2δ}(x))^{2}\}dx\\
+\left\Vert H\right\Vert ^{2} & =\int_{-\infty}^{+\infty}(H^{2}(x)+(H'(x))^{2})dx
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{a}(x)\text{ — решение данной задачи; при }α\to0,\, H_{a}(x)\to H(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Метод невязки
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+ρ(α)=\left\Vert \hat{A}H_{α}-u_{2δ}\right\Vert -(δ+ε\left\Vert H_{a}\right\Vert ^{2})\text{ — функция невязки}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+ρ(α)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Дискретное представление результатов
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H_{α}(k) & =\frac{\text{Δ}x}{N}\sum_{m=0}^{N-1}\frac{\exp(\frac{2πikm}{N})\tilde{u}_{1}(m)\tilde{u}_{2}^{*}(m)}{\left|\tilde{u}_{2}(m)\right|^{2}(\text{Δ}x)^{2}+α(1+(\frac{2πm}{T})^{2})}\\
+ρ(a) & =β(α)-(δ+ε\sqrt{γ(α)})^{2}\\
+γ(α) & =\frac{\text{Δ}x}{n}\sum_{m=0}^{N-1}\frac{\left|\tilde{u}_{2}(m)\right|^{2}(\text{Δ}x)^{2}\left|\tilde{u}_{1}(m)\right|^{2}(1+(\frac{2πm}{T})^{2})}{[\left|\tilde{u}_{2}(m)\right|^{2}(\text{Δ}x)^{2}+α(1+\frac{2πm}{T})^{2}]^{2}}\\
+β(α) & =\frac{\text{Δ}x}{N}\sum_{m=0}^{N-1}\frac{α^{2}\left|\tilde{u}_{1}(m)\right|^{2}(1+(\frac{2πm}{T})^{2})}{[\left|\tilde{u}_{2}(m)\right|^{2}(\text{Δ}x)^{2}+α(1+\frac{2πm}{T})^{2}]^{2}}\\
+ρ(a) & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,972 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass g7-32_text
+\begin_preamble
+% Параграфы "Условие" "Решение"
+\newcommand{\conditions}{\paragraph{Условие}}
+\newcommand{\solution}{\paragraph{Решение}}
+\usepackage[thinc]{esdiff}
+\usepackage{commath}
+\usepackage{unicode-math}
+\end_preamble
+\use_default_options false
+\begin_modules
+local-minted
+irv-math
+\end_modules
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding default
+\font_roman CMU Serif
+\font_sans CMU Sans Serif
+\font_typewriter CMU Typewriter Text
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format pdf4
+\output_sync 1
+\output_sync_macro "\synctex=1"
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Предметный указатель
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 2cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+ЛЕКЦИЯ №4.
+ 25.02.15
+\end_layout
+
+\begin_layout Раздел
+Фильтры
+\end_layout
+
+\begin_layout Подраздел
+БИХ-фильтры (с бесконечной импульсной характеристикой)
+\end_layout
+
+\begin_layout Пункт
+Фильтры второго порядка
+\end_layout
+
+\begin_layout Standard
+Наибольшее распространение получили так называемые фильтры второго порядка.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y(i)=b_{0}\chi(i)-a_{1}y(i-1)-a_{2}y(i-2)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для передаточной функции фильтра второго порядка может быть получено следующее
+ выражение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\frac{b_{0}}{1+a_{1}exp(-2\pi if\tau)+a_{2}exp(-4\pi if\tau)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Пункт
+Фильтр низких частот
+\end_layout
+
+\begin_layout Standard
+Пропускает низкие частоты, не пропускает высокие.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/4.1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Идеальный фильтр низких частот
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\frac{Y(f)}{X(f)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Физический смысл фильтра.
+ Если сделать фотографию, на ней можно сделать крупные и мелкоразмерные
+ детали.
+ Спектр крупноразмерных деталей сосредоточен в области низких частот.
+ Всевозможные мелкоразмерные детали (шумы, импульсный шум) лежат в области
+ высоких частот.
+\end_layout
+
+\begin_layout Standard
+Этот фильтр приводит к размыванию краёв.
+ 
+\end_layout
+
+\begin_layout Standard
+При реализации идеального фильтра возникает эффект Гиббса.
+ Поэтому реально такие фильры в качестве фильтров низких частот не используют.
+ 
+\end_layout
+
+\begin_layout Подпункт
+Фильтр Батеруорта
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|H(f)|^{2}=\frac{1}{1+(\frac{sin\pi f\tau}{sin\pi B\tau})^{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/4.2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Сглаженный фильтр
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathrm{fact} & =\sin(piBT)\\
+C & =1-\mathrm{fact^{2}}\\
+q & =\mathrm{fact}\cdot Bw\\
+Bw & =\frac{\sqrt{2}}{2}\\
+D & =\frac{-C+\sqrt{C^{2}+4q^{2}}}{2}\\
+E & =\sqrt{D}+\sqrt{D+1}\\
+a_{1} & =-2(\frac{2q^{2}}{D}-1)/E^{2}\\
+a_{2} & =-1/E^{4}\\
+b_{0} & =1+a_{1}+a_{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если мы выбрали шаг дискретизации 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+, то 
+\begin_inset Formula $\Delta t\Delta f=\frac{1}{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Пункт
+Фильтр высоких частот
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/4.3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Фильтр позволяет выделить малоразмерные детали.
+ В некоторой степени он повышает их четкость, но изображение получается
+ достаточно темным.
+ Поэтому обычно фильтр не используется отдельно, к нему добавляют среднее
+ значение интенсивности.
+ Так же, как и для фильтра низких частот, используется не идеальное представлени
+е, а сглаженное.
+\end_layout
+
+\begin_layout Подпункт
+Фильтр Батеруорта
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|H(f)\right|^{2}=\frac{1}{1+\left[\frac{\sin(\pi fτ+π/2)}{\sin(\pi Bτ)}\right]^{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{1}=\frac{2(\frac{2q^{2}}{D}-1)}{E}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $τ$
+\end_inset
+
+ — шаг дискретизации по времени.
+\end_layout
+
+\begin_layout Пункт
+Полосно-пропускающий фильтр
+\end_layout
+
+\begin_layout Standard
+Прямоугольник — область пропускания, остальное отсекается.
+ Выделить детали средней размерности.
+ Выбирают частоту 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+.
+ Её можно варьировать.
+\end_layout
+
+\begin_layout Standard
+Здесь так же используется сглаженный фильтр.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/4.4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подпункт
+Фильтр Батеруорта
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left|H(f)\right|^{2} & =\frac{1}{1+(\frac{\cos(2\pi fτ)-C}{S})^{2}}\\
+C & =\cos(2\pi f_{C}τ)\cos(\pi Bτ)\\
+S & =\sin(2\pi f_{C}t)\sin(\pi Bτ)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Пункт
+Полосно-заграждающий фильтр
+\end_layout
+
+\begin_layout Standard
+Фильтр высоких частот делает изображение тёмным.
+ Этот фильтр в какой-то степени устраняет этот недостаток.
+ С одной стороны, он позволяет выделить мелкие детали, с другой - не убирает
+ всю интенсивность изображения.
+ 
+\end_layout
+
+\begin_layout Standard
+Имеет следующий вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|H(f)\right|^{2}=1-\frac{1}{1+(\frac{\cos(2\pi fτ)-C}{S})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/4.5.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подраздел
+КИХ-фильтры (с конечной импульсной характеристикой)
+\end_layout
+
+\begin_layout Пункт
+Фильтры низких частот
+\end_layout
+
+\begin_layout Подпункт
+Фильтр Батеруорта
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\frac{1}{1+(\frac{f}{D_{0}})^{2n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Лучшие значения степени — 
+\begin_inset Formula $n=2$
+\end_inset
+
+.
+ Дает крутизну фильтра низких частот.
+ Чем больше 
+\begin_inset Formula $n$
+\end_inset
+
+, тем больше крутизна.
+ Однако, при больших значениях 
+\begin_inset Formula $n$
+\end_inset
+
+ возникает эффект Гиббса.
+\end_layout
+
+\begin_layout Standard
+Двумерный фильтр:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/4.6.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Крутизна фильтров
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H(f_{1},f_{2}) & =\frac{1}{1+(\frac{D(f_{1},f_{2})}{D_{0}})^{2n}}\\
+D(f_{1},f_{2}) & =\sqrt{f_{1}^{2}+f_{2}^{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подпункт
+Фильтр Гаусса
+\end_layout
+
+\begin_layout Standard
+При больших 
+\begin_inset Formula $\sigma$
+\end_inset
+
+фильтр более плавный.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H(f) & =\exp(-\frac{f^{2}}{σ^{2}})\\
+H(f_{1,}f_{2}) & =\exp(-\frac{D^{2}(f_{1},f_{2})}{σ^{2}})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Пункт
+Фильтры высоких частот
+\end_layout
+
+\begin_layout Подпункт
+Фильтр Батеруорта
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H(f) & =\frac{1}{1+(\frac{D_{0}}{f})^{2n}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подпункт
+Фильтр Гаусса
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H(f) & =1-\exp(-\frac{f^{2}}{σ^{2}})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подпункт
+Фильтр Лапласа
+\end_layout
+
+\begin_layout Standard
+Суть фильтра - берём производную.
+\end_layout
+
+\begin_layout Standard
+Фильтр чувствителен к шумам.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+H(f_{1},f_{2}) & =-(f_{1}^{2}+f_{2}^{2})\\
+H(f) & =-f^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pic/4.7.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Раздел
+Цифровое представление помех
+\end_layout
+
+\begin_layout Standard
+Помехи носят случайный характер.
+ Часто малоразмерные детали рассматриваются как некоторые реализации случайного
+ процесса.
+ 
+\end_layout
+
+\begin_layout Standard
+Необходимо получить некоторые характеристики (моменты, средние, дисперсии
+ и т.д.).
+ 
+\end_layout
+
+\begin_layout Подраздел
+Характеристики случайных величин
+\end_layout
+
+\begin_layout Пункт
+Гистограмма
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $\rho(x)d(x)$
+\end_inset
+
+ - гистограмма
+\end_layout
+
+\begin_layout Standard
+Гистограмма распределения 
+\begin_inset Formula $h(m)$
+\end_inset
+
+ - относительная доля отсчетов, имеющих значение 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ Если количество отсчетов равно 
+\begin_inset Formula $N$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h(m)=\frac{1}{N}\sum_{n=0}^{N-1}\delta_{nm}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\delta_{nm}$
+\end_inset
+
+- символ Кронекера
+\end_layout
+
+\begin_layout Пункт
+Среднее
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{m}=\sum_{m=0}^{N-1}h(m)m=\frac{1}{N}\sum_{n=0}^{N-1}m_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Пункт
+Корреляционная функция
+\end_layout
+
+\begin_layout Standard
+Показывает, насколько статистически (не)связаны различные процессы.
+ Автокорреляционная функция - насколько связаны два значения функции, отделённые
+ каким-то интервалом.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R(ξ)=\frac{1}{T}\int_{T}u(χ)u^{*}(χ+ξ)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Нормированная
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R(\xi)=\frac{1}{T}\int_{T}u(x)u^{*}(x+\xi)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подпункт
+Дискретный аналог
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R(n)=\frac{1}{N}\sum_{k=0}^{N-1}u_{k}u_{k+n}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Пункт
+Энергетический спектр
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A(k)=\mathrm{\text{БПФ}(R(n))}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Подраздел
+Модели случайных помех
+\end_layout
+
+\begin_layout Standard
+Существует общая схема, которая заключается в следующем: тот или иной случайный
+ процесс, включает в себя два этапа.
+ 
+\end_layout
+
+\begin_layout Standard
+Первый этап - генерация отсчётов c равномерным законом распределения.
+\end_layout
+
+\begin_layout Standard
+Второй этап - выполнение преобразования для получения заданных статистических
+ свойств.
+ 
+\end_layout
+
+\begin_layout Standard
+Центральная предельная теорема.
+ Её суть заключается в следующем: если у нас есть суперпозиция нескольких
+ случайных процессов и если эти процессы независимы друг от друга, то суперпозиц
+ия стремится к гауссовому распределению.
+ 
+\end_layout
+
+\begin_layout Standard
+Получение распределения с гауссовым случайным процессом.
+\end_layout
+
+\begin_layout Пункт
+Гауссов случайный процесс
+\end_layout
+
+\begin_layout Standard
+Случайный процесс с равномерным распределением в некотором интервале.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{\xi_{k}\}$
+\end_inset
+
+ — отсчеты равномерного процесса
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{\eta_{e}\}$
+\end_inset
+
+ — гауссов процесс
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+η_{l}=\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}h_{k}ξ_{k}\exp(\frac{-2\pi ikl}{N})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Этот процесс стремится к гауссовому распределению.
+\end_layout
+
+\begin_layout Standard
+ЛАБОРАТОРНАЯ РАБОТА 4.
+\end_layout
+
+\begin_layout Standard
+Гауссов процесс может быть восстановлен по среднему и дисперсии.
+ 
+\end_layout
+
+\begin_layout Standard
+Когда мы получаем зашумленный сигнал, у нас нет никакой информации о том,
+ каким был идеальный сигнал и что из себя представляли помехи.
+ Возникает вопрос об определении характеристик случайных помех.
+ Если помеха импульсная, то для определения характеристики помехи достаточно
+ её локализовать и выполнить интерполяцию в этой области.
+ Если помеха имеет вид белого шума (представлены все частоты) и является
+ аддитивной, то её выделение сложнее.
+\end_layout
+
+\end_body
+\end_document

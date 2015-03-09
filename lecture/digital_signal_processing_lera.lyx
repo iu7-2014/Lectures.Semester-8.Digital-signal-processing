@@ -1,0 +1,1225 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+ЛЕКЦИЯ 25.02.2015
+\end_layout
+
+\begin_layout Section
+Фильтры.
+\end_layout
+
+\begin_layout Subsection
+БИХ-фильтры (с бесконечной импульсной характеристикой)
+\end_layout
+
+\begin_layout Subsubsection
+Фильтры второго порядка
+\end_layout
+
+\begin_layout Standard
+Наибольшее распространение получили так называемые фильтры второго порядка.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y(i)=b_{0}\chi(i)-a_{1}y(i-1)-a_{2}y(i-2)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для передаточной функции фильтра второго порядка может быть получено следующее
+ выражение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\frac{b_{0}}{1+a_{1}exp(-2\pi if\tau)+a_{2}exp(-4\pi if\tau)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Фильтр низких частот
+\end_layout
+
+\begin_layout Standard
+Пропускает низкие частоты, не пропускает высокие.
+\end_layout
+
+\begin_layout Standard
+Рисунок 1.
+ (модуль H(f), f, идеальный фильтр низких частот)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\frac{Y(f)}{X(f)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Физический смысл фильтра.
+ Если сделать фотографию, на ней можно сделать крупные и мелкоразмерные
+ детали.
+ Спектр крупноразмерных деталей сосредоточен в области низких частот.
+ Всевозможные мелкоразмерные детали (шумы, импульсный шум) лежат в области
+ высоких частот.
+\end_layout
+
+\begin_layout Standard
+Этот фильтр приводит к размыванию краёв.
+ 
+\end_layout
+
+\begin_layout Standard
+При реализации идеального фильтра возникает эффект Гиббса.
+ Поэтому реально такие фильры в качестве фильтров низких частот не используют.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Фильтр низких частот Батеруорта
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|H(f)|^{2}=\frac{1}{1+(\frac{sin\pi f\tau}{sin\pi B\tau})^{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рисунок 2.
+ (сглаженный фильтр)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+fact=sin(\pi B\tau)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c=1-fact^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Bw=\nicefrac{\sqrt{2}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+q=fact*Bw
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D=\frac{-c+\sqrt{c^{2}+4(q^{2})}}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E=\sqrt{D}+\sqrt{D+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{1}=\frac{-2(\frac{2q^{2}}{D^{2}}-1)}{E^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{2}=\nicefrac{-1}{E^{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b_{0}=1+a_{1}+a_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если мы выбрали шаг дискретизации 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+, то 
+\begin_inset Formula $\Delta t\Delta f=\frac{1}{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Фильтр высоких частот
+\end_layout
+
+\begin_layout Standard
+Рисунок 3.
+ (|H(f)|, f, F, F-B, прямоугольничек).
+\end_layout
+
+\begin_layout Standard
+Фильтр позволяет выделить малоразмерные детали.
+ В некоторой степени он повышает их четкость, но изображение получается
+ достаточно темным.
+ Поэтому обычно фильтр не используется отдельно, к нему добавляют среднее
+ значение интенсивности.
+ Так же, как и для фильтра низких частот, используется не идеальное представлени
+е, а сглаженное.
+\end_layout
+
+\begin_layout Paragraph
+Фильтр высоких частот Батеруорта
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|H(f)|^{2}=\frac{1}{1+[\frac{sin(\pi f\tau+\nicefrac{\pi}{2})}{sin\pi B\tau}]^{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{1}=\frac{2(\frac{2q^{2}}{D}-1)}{E}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{Δ}t$
+\end_inset
+
+ — шаг дискретизации по времени.
+\end_layout
+
+\begin_layout Subsubsection
+Полоснопропускающий фильтр
+\end_layout
+
+\begin_layout Standard
+Рисунок 4.
+ (|H(f)|, f, прямоугольничек)
+\end_layout
+
+\begin_layout Standard
+Прямоугольник - область пропускания, остальное отсекается.
+ Выделить детали средней размерности.
+ Выбирают частоту 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+.
+ Её можно варьировать.
+\end_layout
+
+\begin_layout Standard
+Здесь так же используется сглаженный фильтр.
+\end_layout
+
+\begin_layout Paragraph
+Полоснопропускающий фильтр Батеруорта
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|H(f)|^{2}=\frac{1}{1+(\frac{cos(2\pi f\tau-c}{s})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+где
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c=cos(2\pi f_{c}\tau)cos(\pi B\tau)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s=sin(2\pi f_{c}\tau)sin(\pi B\tau)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Полоснозаграждующий фильтр
+\end_layout
+
+\begin_layout Standard
+Рисунок 5.
+ (два прямоугольничка)
+\end_layout
+
+\begin_layout Standard
+Фильтр высоких частот делает изображение тёмным.
+ Этот фильтр в какой-то степени устраняет этот недостаток.
+ С одной стороны, он позволяет выделить мелкие детали, с другой - не убирает
+ всю интенсивность изображения.
+ 
+\end_layout
+
+\begin_layout Standard
+Имеет следующий вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|H(f)|^{2}=1-\frac{1}{1+(\frac{cos(2\pi f\tau)-c}{s})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+КИХ-фильтры (с конечной импульсной характеристикой)
+\end_layout
+
+\begin_layout Subsubsection
+Низкочастотные фильры
+\end_layout
+
+\begin_layout Paragraph
+Фильтр Батеруорта
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\frac{1}{1+(\frac{f}{D_{0}})^{2n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рисунок 6.
+ Крутизна фильтров.
+\end_layout
+
+\begin_layout Standard
+Лучшие значения степени - 
+\begin_inset Formula $n=2$
+\end_inset
+
+.
+ Дает крутизну фильтра низких частот.
+ Чем больше n, тем больше крутизна.
+ Однако, при больших значениях n возникает эффект Гиббса.
+\end_layout
+
+\begin_layout Standard
+Двумерный фильтр:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f_{1},f_{2})=\frac{1}{1+(\frac{D(f_{1}f_{2})}{D_{0}})^{2n}}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph
+Фильтр Гаусса
+\end_layout
+
+\begin_layout Standard
+При больших 
+\begin_inset Formula $\sigma$
+\end_inset
+
+фильтр более плавный.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H(f)=exp(-\frac{f^{2}}{\sigma^{2}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H(f_{1},f_{2})=exp(-\frac{D^{2}(f_{1},f_{2})}{\sigma^{2}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Высокочастотные фильтры
+\end_layout
+
+\begin_layout Paragraph
+Фильтр Батеруорта
+\end_layout
+
+\begin_layout Paragraph
+Фильтр Гаусса
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H(f)=1-exp(-\frac{f^{2}}{\sigma^{2}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Фильтр Лапласа
+\end_layout
+
+\begin_layout Standard
+Лапласиан 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\triangle=\frac{\partial}{\partial x^{2}}+\frac{\partial}{\partial y^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рисунок 7.
+ (линии О_о)
+\end_layout
+
+\begin_layout Standard
+Суть фильтра - берём производную.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H(f)=-f^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H(f_{1},f_{2})=-(f_{1}^{2}+f_{2}^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Фильтр чувствителен к шумам.
+ 
+\end_layout
+
+\begin_layout Standard
+ЛАБОРАТОРНАЯ РАБОТА 3
+\end_layout
+
+\begin_layout Section
+Цифровое представление помех
+\end_layout
+
+\begin_layout Standard
+Помехи носят случайный характер.
+ Часто малоразмерные детали рассматриваются как некоторые реализации случайного
+ процесса.
+ 
+\end_layout
+
+\begin_layout Standard
+Необходимо получить некоторые характеристики (моменты, средние, дисперсии
+ и т.д.).
+ 
+\end_layout
+
+\begin_layout Subsection
+Характеристики случайных величин
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset Formula $\rho(x)d(x)$
+\end_inset
+
+ - гистограмма
+\end_layout
+
+\begin_layout Standard
+Гистограмма распределения 
+\begin_inset Formula $h(m)$
+\end_inset
+
+ - относительная доля отсчетов, имеющих значение 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ Если количество отсчетов равно 
+\begin_inset Formula $N$
+\end_inset
+
+, то
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h(m)=\frac{1}{N}\sum_{n=0}^{N-1}\delta_{nm}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\delta_{nm}$
+\end_inset
+
+- символ Кронекера
+\end_layout
+
+\begin_layout Subsubsection
+Среднее
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{m}=\sum_{m=0}^{N-1}h(m)m=\frac{1}{N}\sum_{n=0}^{N-1}m_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Корреляционная функция
+\end_layout
+
+\begin_layout Standard
+Показывает, насколько статистически (не)связаны различные процессы.
+ Автокорреляционная функция - насколько связаны два значения функции, отделённые
+ каким-то интервалом.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R(\xi)=\int_{T}u(x)u^{*}(x+\xi)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Нормированная
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R(\xi)=\frac{1}{T}\int_{T}u(x)u^{*}(x+\xi)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Дискретный аналог корреляционной функции:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R(n)=\frac{1}{N}\sum_{k=0}^{N-1}u_{k}u_{k+n}^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выражение очень похоже на свёртку.
+\end_layout
+
+\begin_layout Standard
+Преобразование Фурье от этой величины - энергетический спектр
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A(x)=\text{БПФ}(R(n))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Модели случайных процессов
+\end_layout
+
+\begin_layout Standard
+Существует общая схема, которая заключается в следующем: тот или иной случайный
+ процесс, включает в себя два этапа.
+ 
+\end_layout
+
+\begin_layout Standard
+Первый этап - генерация отсчётов c равномерным законом распределения.
+\end_layout
+
+\begin_layout Standard
+Второй этап - выполнение преобразования для получения заданных статистических
+ свойств.
+ 
+\end_layout
+
+\begin_layout Standard
+Центральная предельная теорема.
+ Её суть заключается в следующем: если у нас есть суперпозиция нескольких
+ случайных процессов и если эти процессы независимы друг от друга, то суперпозиц
+ия стремится к гауссовому распределению.
+ 
+\end_layout
+
+\begin_layout Standard
+Получение распределения с гауссовым случайным процессом.
+\end_layout
+
+\begin_layout Subsubsection
+Гауссов случайный процесс
+\end_layout
+
+\begin_layout Standard
+Случайный процесс с равномерным распределением в некотором интервале.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{\xi_{k}\}$
+\end_inset
+
+ - отсчеты равномерного процесса
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{\eta_{e}\}$
+\end_inset
+
+ - гауссов процесс
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\eta_{e}=\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}h_{k}\xi_{k}e^{\frac{-2\pi ikl}{N}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Этот процесс стремится к гауссовому распределению.
+ 
+\end_layout
+
+\begin_layout Standard
+ЛАБОРАТОРНАЯ РАБОТА 4.
+\end_layout
+
+\begin_layout Standard
+Гауссов процесс может быть восстановлен по среднему и дисперсии.
+ 
+\end_layout
+
+\begin_layout Standard
+Когда мы получаем зашумленный сигнал, у нас нет никакой информации о том,
+ каким был идеальный сигнал и что из себя представляли помехи.
+ Возникает вопрос об определении характеристик случайных помех.
+ Если помеха импульсная, то для определения характеристики помехи достаточно
+ её локализовать и выполнить интерполяцию в этой области.
+ Если помеха имеет вид белого шума (представлены все частоты) и является
+ аддитивной, то её выделение сложнее.
+\end_layout
+
+\begin_layout Subsection
+Определение параметров случайных помех
+\end_layout
+
+\begin_layout Subsubsection
+Широкополосный шум (белый шум)
+\end_layout
+
+\begin_layout Standard
+Характеристики шума:
+\end_layout
+
+\begin_layout Enumerate
+Аддитивный
+\end_layout
+
+\begin_layout Enumerate
+Статистически независимый
+\end_layout
+
+\begin_layout Standard
+Искажнный помехой сигнал: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u=u_{0}+\xi
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Корреляционная функция искаженного помехой сигнала может быть представлена
+ следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R(u)=R(u_{0})+R(\xi)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим поведение корреляционной функции, как функции от некоторого аргумента
+ 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{u}(\tau)=R_{0}(\tau)+R_{\xi}(\tau)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если спектр увеличивается, то уменьшается временной интервал, то есть
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $FT\simeq L$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рисунок 8.
+ (R_u(tau), tau, интерполяция)
+\end_layout
+
+\begin_layout Subsubsection
+Оценка параметров периодических помех и других помех с узким спектром.
+ 
+\end_layout
+
+\begin_layout Standard
+Спектр периодической помехи представляет собой достаточно узкий выброс в
+ частотной области (напомниает дельта-функцию).
+ 
+\end_layout
+
+\begin_layout Standard
+Предполагаем, что помеха и идеальный сигнал статистически независимы и аддитивны.
+ Рассматриваем не саму корреляционную функцию, а энергетический спектр -
+ фурье-образ корреляционной функции сигнала.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{u}(f)=A_{0}(f)+A_{\xi}(f)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рисунок 9.
+ (A_u(f), f, график с ушками)
+\end_layout
+
+\begin_layout Standard
+Пороговый критерий.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|A_{u}(f)|\geq\Delta_{\text{пороговая }}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Использование порогового критерия связано с ошибками двух видов.
+ Ошибки пропуска - было взято слишком большое значение и ошибку пропустили.
+ Ложная тревога - часть идеального сигнала была принята за ошибку.
+ 
+\end_layout
+
+\begin_layout Standard
+При частоте 
+\begin_inset Formula $f=f_{1}$
+\end_inset
+
+есть выброс.
+ Далее выполняем интерполяцию по тем соседним точкам, где выброса уже нет.
+ 
+\begin_inset Formula $\tilde{A_{u}}(f)$
+\end_inset
+
+ - интерполированная функция.
+ Тогда
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A_{\xi}(f)=A_{u}(f)-\tilde{A_{u}}(f)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Импульсная помеха
+\end_layout
+
+\begin_layout Standard
+Приблизительно тот же самый алгоритм, что и при помехе с узким спектром
+ (но во временной области).
+\end_layout
+
+\begin_layout Section
+Синтез линейных фильтров
+\end_layout
+
+\begin_layout Standard
+Рассмотренные выше фильтры не являлись адаптивными, то есть не учитывали
+ вид помех.
+\end_layout
+
+\begin_layout Subsection
+Адаптивный фильтр Винера
+\end_layout
+
+\begin_layout Standard
+Этот фильтр в какой-то степени учитывает вид помехи.
+\end_layout
+
+\begin_layout Standard
+Отсчеты обрабатываемого сигнала (искаженного помехой): 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\vec{u}=\{u_{k}\}$
+\end_inset
+
+, 
+\begin_inset Formula $k=0,...,N-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\vec{a}=\{a_{k}\}$
+\end_inset
+
+ - идеальный сигнал.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\overrightarrow{a}}=\{\hat{a}_{k}\}$
+\end_inset
+
+ - восстановленный сигнал.
+\end_layout
+
+\begin_layout Standard
+Среднеквадратичное усредненное отклонение:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{\bar{\varepsilon^{2}}=\bar{\overline{\sum_{k=0}^{N-1}|\hat{a_{k}}-a_{k}|^{2}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Мы должны синтезировать такой фильтр, чтобы он после применения к искаженному
+ сигналу дал нам восстановленный сигнал.
+\end_layout
+
+\begin_layout Standard
+Спектр идеального сигнала 
+\begin_inset Formula $\{\alpha_{k}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Спектр восстановленного сигнала 
+\begin_inset Formula $\{\hat{\alpha_{k}}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{\bar{\varepsilon^{2}}=\bar{\overline{\sum_{k=0}^{N-1}|\hat{\alpha_{k}}-\alpha_{k}|^{2}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поскольку функция является свёрткой, спектры это просто произведение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{\alpha}_{k}=V_{k}H_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{V_{k}\}$
+\end_inset
+
+ - спектр 
+\begin_inset Formula $\{u_{k}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{H_{k}\}$
+\end_inset
+
+ - спектр 
+\begin_inset Formula $\{h_{k}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Выражение для фильтра Виннера
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{k}=\frac{\overline{\alpha_{k}V_{k}^{*}}}{\overline{|V_{k}|^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Частные случаи, которые могут быть использованы для рассчетов
+\end_layout
+
+\begin_layout Paragraph*
+Аддитивная статистически независимая помеха
+\begin_inset Formula 
+\[
+u_{k}=\xi_{k}+a_{k}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+V_{k}=\chi_{k}+\alpha_{k}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+H_{k}=\frac{\overline{|V_{k}|^{2}}-\overline{|\chi_{k}|^{2}}}{\overline{|V_{k}|^{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Частный случай фильтра Винера - режекторный фильтр.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{k}=\begin{cases}
+1, & \text{если}\ensuremath{|v_{k}|\gg|\chi_{k}|}\\
+0, & \text{если}|v_{k}|\sim|\chi_{k}|
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Коррекция линейных помех, вносимых системой преобразование сигнала
+\end_layout
+
+\begin_layout Standard
+Спектр искаженного сигнала включает в себя аддитивную помеху 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{k}=\chi_{k}+\lambda)_{k}\alpha_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\{\lambda_{k}\}$
+\end_inset
+
+ - спектр искажающей функции.
+\end_layout
+
+\begin_layout Standard
+Выражение для фильтра Винера получается следующим образом:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{k}=\begin{cases}
+\frac{\overline{|V_{k}|^{2}}-\overline{|\chi_{k}|^{2}}}{\overline{|V_{k}|^{2}}}, & \text{если }\lambda_{k}\neq0\\
+0 & \text{иначе}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
